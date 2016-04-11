@@ -1,0 +1,40 @@
+div select {width: 110px !important;}
+
+div.jumbotron center a:first-child img {width: 350px;}
+div.jumbotron center a:last-child {font-size: 2em; color: #000;}
+
+center table {margin-top: 20px; width: 90% !important; cursor: default;}
+center table tr td.type {text-align: center;}
+center table tr td.type:hover {background-color: #fff;}
+center table tr td button.operation {visibility: hidden;}
+
+
+div.Mongolia-laye {
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: silver;
+}
+div.popup {
+	display: none;
+	position: fixed;
+	left: 35%;
+	top: 35%;
+	z-index: 10;
+	background-color: #fff;
+	padding: 0 50px;
+	border-radius: 10px 0 10px 0;
+	box-shadow: 0 12px 8px -9px #555;
+	width: 30%;
+}
+div.popup .message {
+	font-size: 1.2em;
+	margin: 15px 0px 7px 0px;
+}
+div.popup button {margin: 7px 0px 15px 0px;}
