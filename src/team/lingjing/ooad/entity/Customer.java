@@ -3,10 +3,18 @@ package team.lingjing.ooad.entity;
 public class Customer {
 	private int id;
 	private String name;
+	private String sex;
 	private int age;
 	private String telephoneNumber;
 	private double balance;
 	private double sumOfConsumption;
+	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public int getId() {
 		return id;
 	}

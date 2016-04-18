@@ -14,6 +14,7 @@ public interface ManageProductService {
     //Products表
     public int addProducts(Products product);
     public Products selectProductsByName(String name);
+    public List<Products> selectProductsByKeyword(String keyword);
     public Products selectProductsByID(int ID);
  //   public List<Products> selectProductsByProductType(int ProductType);
     public int deleteProducts(Products product);

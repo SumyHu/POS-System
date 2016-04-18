@@ -1,5 +1,6 @@
 package team.lingjing.test;
 
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,11 +25,12 @@ public class TestDao {
 	public void productDaoTest(){
 		ProductDao productDao = new ProductDaoImpl();
 		Products product = productDao.selectProductByName("椰汁奶茶");
-			System.out.println("产品ID:"+product.getId()+"产品名称:"+product.getProname()+"产品类别"+product.getType().getId());
-		
+			System.out.println("产品ID:"+product.getId()+"产品名称:"+product.getProname()+"产品类别"+product.getType().getName()+"产品推出时间:"+new SimpleDateFormat("yyyy年-MM月-dd日").format(product.getUdate()));
+		//按关键字查询方法还有问题，即不能进行模糊查询
+			
 		Iterator<Products> itor = productDao.selectProductsByKeyword("椰汁").iterator();
 		while(itor.hasNext()){
-			Products product1 = new Products();
+			Products product1 = itor.next();
 			System.out.println("产品id:"+product1.getId()+"产品名称:"+product1.getProname());
 		}
 		//Products product1 = productDao.get(Products.class, 4);

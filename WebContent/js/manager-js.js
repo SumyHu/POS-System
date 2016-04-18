@@ -34,7 +34,7 @@ var connectDataBase = {
 		$.each(data, function(index, row) {
 			var tdValue = [row.id, row.proname, row.price, row.udate, row.dayqty, row.monqty];
 			alert("e");
-			dueWithData.showTableRow(getData.tbody, "test", getData.colnum, tdValue, false);
+			dueWithData.showTableRow(getData.tbody, row.type.name, getData.colnum, tdValue, false);
 			alert("f");
 		});
 	},
@@ -469,5 +469,5 @@ $(document).ready(function() {
 
 	alert("双击表格可以直接在界面上修改表格");
 
-	publicConnectDataBase.pushData("findAll.action", "post", "", connectDataBase.showTable, publicConnectDataBase.errorHappaned);
+	publicConnectDataBase.pushData("findAll", "post", "", connectDataBase.showTable, publicConnectDataBase.errorHappaned);
 })

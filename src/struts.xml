@@ -6,10 +6,20 @@
 <struts>
 <constant name="struts.il8n.encoding" value="UTF-8"></constant>
 <package name="product" extends="struts-default,json-default" namespace="/">
-<action name="findAll" class = "team.lingjing.ooad.action.FindAllProductsAction">
+<action name="findAll" class = "team.lingjing.ooad.action.ManageProductAction"
+method="findAllProducts"
+>
 <result type="json"><!-- 返回JSON类型数据 -->
 <param name="root">result</param>
 </result>
+</action>
+<action name="login" class="team.lingjing.ooad.action.LoginAction">
+<result name="error">error.html</result><!-- 这里使用了相对路径，如果程序运行有错，可能是这里出现问题 -->
+<result name="success">manager.html</result>
+</action>
+<action name="register" class="team.lingjing.ooad.action.LoginAction" method="register">
+<result name="error">error.html</result>
+<result name="success">manager.html</result>
 </action>
 </package>
 </struts>

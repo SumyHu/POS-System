@@ -81,4 +81,9 @@ public class ManageProductServiceImpl implements ManageProductService{
 		return productTypeDao.selectProductTypeByName(name);
 	}
 
+	@Override
+	public List<Products> selectProductsByKeyword(String keyword) {
+		return  productDao.selectProductsByKeyword(keyword);
+	}
+
 }

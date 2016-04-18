@@ -1,10 +1,10 @@
 package team.lingjing.ooad.entity;
-
+import java.util.Date;
 public class Products {
 	private int id;//产品编号
 	private String proname;//产品名
 	private double price;//产品价格
-	private String udate;//产品推出时间
+	private Date udate;//产品推出时间
 	private int dayqty;//产品日销量
 	private int monqty;//产品月销量
 	private ProductType type;//产品类别
@@ -28,10 +28,10 @@ public class Products {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getUdate() {
+	public Date getUdate() {
 		return udate;
 	}
-	public void setUdate(String udate) {
+	public void setUdate(Date udate) {
 		this.udate = udate;
 	}
 	public int getDayqty() {

@@ -9,7 +9,7 @@
         </id>    
         <property name="proname" column="proname"/> 
         <property name="price" column="price"/> 
-        <property name="udate" column="udate"/> 
+        <property name="udate" type="java.util.Date" column="udate"/> 
         <property name="dayqty" column="dayqty"/> 
         <property name="monqty" column="monqty"/> 
        <many-to-one name="type" column="type"

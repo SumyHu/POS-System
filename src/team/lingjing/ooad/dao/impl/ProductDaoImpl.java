@@ -43,7 +43,7 @@ public class ProductDaoImpl extends HibernateBaseDao<Products> implements Produc
 		Session session = HibernateSessionFactory.getSession();
 		 Criteria c=session.createCriteria(Products.class);
 		try {
-		        c.add(Restrictions.eq("type", typeID));
+		        c.add(Restrictions.eq("type.id", typeID));
 		        list = c.list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,10 +58,10 @@ public class ProductDaoImpl extends HibernateBaseDao<Products> implements Produc
 	public List<Products> selectProductsByKeyword(String keyword) {
 		List<Products> list = null;
 		Session session = HibernateSessionFactory.getSession();
-		String hql = "from Products p where p.proname like ?";
+		String hql = "from Products p where p.proname like :proname";
 		try {
 		        Query query = session.createQuery(hql);
-		        query.setString("proname", "%keyword%");
+		        query.setString("proname", "%"+keyword+"%");
 		        list = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
