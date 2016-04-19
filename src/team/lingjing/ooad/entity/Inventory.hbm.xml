@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="team.lingjing.ooad.entity">
+	<class name="Inventory" table="inventory">
+		 <id name="id" column="id">  
+		   <generator class="native"/>  
+        </id>    
+        <property name="product_id" column="product_id"/> 
+        <property name="count" column="count"/> 
+	</class>
+</hibernate-mapping>
