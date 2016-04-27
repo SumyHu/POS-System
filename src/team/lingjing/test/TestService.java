@@ -1,5 +1,7 @@
 package team.lingjing.test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 
 import team.lingjing.ooad.entity.ProductType;
@@ -18,16 +20,16 @@ public class TestService {
 	public void productService(){
 		ManageProductService productService = new ManageProductServiceImpl();
 		
-		/*ProductType productType = new ProductType();
+		ProductType productType = new ProductType();
 		productType = (ProductType) productService.selectProductTypeByID(3);
 		Products products = new Products();
-		products.setProname("椰汁奶茶");
+		products.setProname("椰汁奶昔");
 		products.setPrice(10);
 		products.setDayqty(60);
 		products.setMonqty(300);
-		products.setUdate("2015");
+		products.setUdate(new Date());
 		products.setType(productType);
-		productService.addProducts(products);**/
+		productService.addProducts(products);
 		
 		Iterator<Products> itor = productService.selectAllProducts().iterator();
 		while(itor.hasNext()){

@@ -6,13 +6,28 @@
 <struts>
 <constant name="struts.il8n.encoding" value="UTF-8"></constant>
 <package name="product" extends="struts-default,json-default" namespace="/">
-<action name="findAll" class = "team.lingjing.ooad.action.ManageProductAction"
-method="findAllProducts"
->
+
+<!-- 产品操作的action -->
+<!-- 显示所有产品的action -->
+<action name="findAll" class = "team.lingjing.ooad.action.FindAllProductsAction">
 <result type="json"><!-- 返回JSON类型数据 -->
 <param name="root">result</param>
 </result>
 </action>
+<!-- 执行添加产品的action -->
+<action name="addProduct" class = "team.lingjing.ooad.action.AddProductAction">  <!-- addProduct -->
+<result type="chain">findAll</result>
+</action>
+<!-- 执行删除产品的action -->
+<action name="deleteProduct" class = "team.lingjing.ooad.action.DeleteProductAction">
+<result type="chain">findAll</result>
+</action>
+<!-- 执行更新产品的action -->
+<action name="updateProduct" class = "team.lingjing.ooad.action.UpdateProductAction">
+<result type="chain">findAll</result>
+</action>
+
+<!-- 雇员登录与注册的action -->
 <action name="login" class="team.lingjing.ooad.action.LoginAction">
 <result name="error">error.html</result><!-- 这里使用了相对路径，如果程序运行有错，可能是这里出现问题 -->
 <result name="success">manager.html</result>

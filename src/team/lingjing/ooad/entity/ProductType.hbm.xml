@@ -8,8 +8,8 @@
 		   <generator class="native"/>  
         </id>    
         <property name="name" column="name"/> 
-        <set name="pros" lazy="false" cascade="all" inverse="true">
-        <key column="type" not-null="true"></key>
+        <set name="pros" lazy="false"  inverse="true">
+        <key column="type"></key>
         <one-to-many class="team.lingjing.ooad.entity.Products"/>
         </set>  
 	</class>

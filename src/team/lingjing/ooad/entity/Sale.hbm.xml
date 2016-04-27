@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="team.lingjing.ooad.entity">
+	<class name="Sale" table="sale">
+		 <id name="saleId" column="saleid">  
+		   <generator class="native"/>  
+        </id>    
+        <property name="total" column="total"/> 
+        <property name="saleState" column="salestate"/> 
+        <property name="date" type="java.util.Date" column="date"/> 
+        <set name="saleLineItem" cascade="all" inverse="true" lazy="false">
+        <key>
+        <column name="saleid"></column>
+        </key>
+        <one-to-many class="team.lingjing.ooad.entity.SalesLineItem"/>
+        </set>
+       <many-to-one name="employee" column="employeeid"
+        class="team.lingjing.ooad.entity.Employee" lazy="false"
+        insert="true" update="true"></many-to-one>
+	</class>
+</hibernate-mapping>

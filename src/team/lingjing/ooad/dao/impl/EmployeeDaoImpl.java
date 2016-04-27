@@ -5,11 +5,12 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import antlr.collections.List;
+import team.lingjing.dao.HibernateBaseDao;
 import team.lingjing.dao.HibernateSessionFactory;
 import team.lingjing.ooad.dao.EmployeeDao;
 import team.lingjing.ooad.entity.Employee;
 
-public class EmployeeDaoImpl implements EmployeeDao{
+public class EmployeeDaoImpl extends HibernateBaseDao<Employee> implements EmployeeDao{
 
 	@Override
 	public Employee validateEmployee(String username, String password) {

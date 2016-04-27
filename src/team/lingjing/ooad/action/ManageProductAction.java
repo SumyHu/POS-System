@@ -60,28 +60,39 @@ public class ManageProductAction extends ActionSupport{
 	}
 	//添加产品
 	public String addProduct() throws Exception{
-		manageProductService.addProducts(product);//执行添加产品操作
-		return this.findAllProducts();
+		
+		if(manageProductService.addProducts(product)==1)
+			 addActionMessage("添加成功");
+		else
+			 addActionMessage("添加失败");
+		
+		return SUCCESS;
 	}
 	//修改产品
 	public String updateProduct() throws Exception{
-		manageProductService.updateProducts(product);//执行更新产品操作
-		return this.findAllProducts();
+		if(manageProductService.updateProducts(product)==1)
+			 addActionMessage("更新成功");
+		else
+			 addActionMessage("更新失败");
+		return SUCCESS;
 	}
 	//删除产品
 	public String deleteProduct() throws Exception{
-		manageProductService.deleteProducts(product);//执行删除产品操作
-		return this.findAllProducts();
+		if(manageProductService.deleteProducts(product)==1)
+			 addActionMessage("删除成功");
+		else
+			 addActionMessage("删除失败");
+		return SUCCESS;
 	}
 	//查询产品
 	public String findProductByName() throws Exception{
 		manageProductService.selectProductsByName(name);//通过产品名字查找产品
-		return this.findAllProducts();
+		return SUCCESS;
 	}
 	//模糊查询
 	public String findProductByKeyword() throws Exception{
 		manageProductService.selectProductsByKeyword(keyword);
-		return this.findAllProducts();
+		return SUCCESS;
 	}
 
 }

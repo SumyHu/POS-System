@@ -1,7 +1,7 @@
 //创建一些公共方法
 
 //在表格中插入标题行，如产品类别行
-var insertHeadRow = function(name) {
+var insertHeadRow = function(typeId, typeName) {
 	var tbody = getData.tbody;
 
 	var rownum = document.getElementsByTagName("tr").length;
@@ -12,13 +12,13 @@ var insertHeadRow = function(name) {
 
 	var content = document.createElement("center");
 	var strong = document.createElement("strong");
-	strong.appendChild(document.createTextNode(name));
+	strong.appendChild(document.createTextNode(typeName));
 	content.appendChild(strong);
 	row.cells[0].appendChild(content);
 
 	row.cells[0].colSpan = "8";
 	row.className = "type";
-	row.name = name;
+	row.name = typeId;
 	row.cells[0].disable = true;
 }
 
@@ -83,7 +83,7 @@ var insertTr = function(tbody, name, index, colnum, tdValue, btnClickFlag) {
 			var rowIndex = row.rowIndex;
 			var colnum = getData.colnum;
 			getData.maxId = dueWithData.getMaxId() + 1;
-			var date = (new Date()).toLocaleDateString();
+			var date = (new Date()).toLocaleDateString()
 			var tdValue =  [getData.maxId, getData.defaultName, getData.defaultPrice, date, getData.defaultDaySaleNum, getData.defaultMonSaleNum];
 			insertTr(document.getElementsByTagName("tbody")[0], name, rowIndex, colnum, tdValue, true);
 		}
@@ -271,10 +271,10 @@ var businessLogic = {
 		btn[0].onclick = function() {
 			businessLogic.closePopup();
 			handlerFunc ? handlerFunc() : "";
-		}
+		};
 		btn[1].onclick = function() {
 			businessLogic.closePopup();
-		}
+		};
 	},
 
 	//关闭弹出框
@@ -282,7 +282,7 @@ var businessLogic = {
 		$(".Mongolia-laye").css("display","none");
 		$(".popup").css("display", "none");
 	}
-}
+};
 
 //兼容各种浏览器事件
 var compatibleDiffBrowserEvent = {
@@ -295,27 +295,28 @@ var compatibleDiffBrowserEvent = {
 			return new XMLHttpRequest();
 		}
 	}
-}
+};
 
 //公共的连接数据库的方法
 var publicConnectDataBase = {
 
 	//传送数据给后台
 	pushData: function(url, method, data, successFunction, failureFunction) {
+		//alert("成功了到这里");
 		var configObj = {
 			"url": url,
 			"method": method,
-			"data": data,
+			"data": {data:data},
 			//dataType:"json",//我修改的地方
 			success: function(jsondata) {
-				alert("1");
+				//alert("success"+"呵呵"+data);
 				successFunction(jsondata);//执行到这里就不行了
-				alert("2");
 			},
 			error: function(jsondata) {
+				//alert("failure"+data);
 				failureFunction(jsondata);
 			}
-		}
+		};
 		$.ajax(configObj);
 	},
 

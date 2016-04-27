@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="team.lingjing.ooad.entity">
+	<class name="SalesLineItem" table="saleslineitem">
+		 <id name="salesLineItemId" column="saleslineitemid">  
+		   <generator class="native"/>  
+        </id>    
+        <property name="productCount" column="productcount"/> 
+        <property name="subtotal" column="subtotal"/> 
+        
+       <many-to-one name="sale" column="saleid"
+        class="team.lingjing.ooad.entity.Sale" fetch="select" lazy="false"
+        cascade="save-update" insert="true" update="true">
+       </many-to-one>
+       <many-to-one name="product" column="productid"
+        class="team.lingjing.ooad.entity.Products" lazy="false"
+        fetch="select" insert="true" update="true">
+       </many-to-one>
+	</class>
+</hibernate-mapping>

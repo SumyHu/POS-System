@@ -1,12 +1,16 @@
 package team.lingjing.ooad.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Employee {
 	private int id;//雇员编号
 	private String username;//即雇员登录账户
 	private String name;//雇员名字
 	private int age;//雇员年龄
 	private String password;//雇员登录密码
-	
+	@SuppressWarnings("rawtypes")
+	private Set saleses = new HashSet();
 	public Employee(){
 		//空的构造方法
 	}
@@ -45,5 +49,14 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@SuppressWarnings("rawtypes")
+	public Set getSaleses() {
+		return saleses;
+	}
+	@SuppressWarnings("rawtypes")
+	public void setSaleses(Set saleses) {
+		this.saleses = saleses;
+	}
+	
 
 }

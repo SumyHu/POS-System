@@ -21,6 +21,8 @@
          <mapping resource="team/lingjing/ooad/entity/Customer.hbm.xml"/>
          <mapping resource="team/lingjing/ooad/entity/Employee.hbm.xml"/>
          <mapping resource="team/lingjing/ooad/entity/Inventory.hbm.xml"/>
+          <mapping resource="team/lingjing/ooad/entity/Sale.hbm.xml"/>
+           <mapping resource="team/lingjing/ooad/entity/SalesLineItem.hbm.xml"/>
          
 
     </session-factory>

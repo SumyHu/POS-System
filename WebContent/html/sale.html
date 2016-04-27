@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/comment-css.css">
+	<link rel="stylesheet" type="text/css" href="../css/sale-css.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<center>
+			<a href="#"><img src="../image/labixiaoxin.jpeg" class="img-circle"></a>
+			<a href="#" class="center-block">蜡笔小新</a>
+		</center>
+	</div>
+
+	<div class="row">
+			<select class="form-control col-md-offset-4  col-md-3 searchType inline">
+				<option>产品ID</option>
+				<option>产品</option>
+				<option>产品类型</option>
+			</select>
+			
+			<div class="form-group col-md-3">
+				<input type="text" class="form-control search" placeholder="search">
+			</div>
+
+			<button class="btn btn-primary searchBtn"><span class="glyphicon glyphicon-search"></span></button>
+		</form>
+	</div>
+
+	<div class="menu">
+		<div class="navDiv">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="javascript:void(0)" data-toggle="tab" class="tab">奶盖类</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" data-toggle="tab" class="tab">小吃类</a>
+				</li>
+			</ul>
+		</div>
+
+		<table class="table menuTable">
+			<thead>
+				<tr>
+					<th>产品</th>
+					<th>价格</th>
+					<th>总销量</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="saleOrder">
+		<button class="btn btn-danger waitingPay">待付款(<span class="waitingPayNum">0</span>)
+			<span class="glyphicon glyphicon-chevron-up"></span></button>
+
+		<div id="orderForGoods">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>产品</th>
+						<th>价格</th>
+						<th>数量</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<center class="row">
+				<button class="btn btn-success payNow">付款</button>
+				<button class="btn btn-primary save">保存</button>
+				<button class="btn btn-warning cancleOrder">取消</button>
+			</center>
+		</div>
+
+		<div id="orderForms">
+			<ul></ul>
+		</div>
+
+		<div id="paying">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>产品</th>
+						<th>价格</th>
+						<th>数量</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<div class="row">
+				总计：<span class="totalCost"></span>
+			</div>
+			<div class="row">
+				实际付款：<input type="text" class="realPayNum">
+			</div>
+			<div class="row">
+				找零：<span class="change"></span>
+			</div>
+			<center class="row">
+				<button class="btn btn-success goToPaying">付款</button>
+				<button class="btn btn-warning canclePayment">取消</button>
+			</center>
+		</div>
+
+		<div id="receipts">
+			收据：
+			<table class="table">
+				<thead>
+					<tr>
+						<th>产品</th>
+						<th>价格</th>
+						<th>数量</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<div class="row">
+				总计：<span class="receiptsTotalCost"></span>
+			</div>
+			<div class="row">
+				实际付款：<span class="receiptsRealPayNum"></span>
+			</div>
+			<div class="row">
+				找零：<span class="receiptsChange"></span>
+			</div>
+			<div class="row">
+				日期：<span class="date"></span>
+			</div>
+			<center class="row">
+				<button class="btn btn-success takeOutReceipts">取走收据</button>
+			</center>
+		</div>
+	</div>
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/scrollFix.js"></script>
+	<script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script src = "../js/publicDom.js"></script>
+	<script src="../js/sale-js.js"></script>
+</body>
+</html>

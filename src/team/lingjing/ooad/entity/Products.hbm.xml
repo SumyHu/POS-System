@@ -14,6 +14,13 @@
         <property name="monqty" column="monqty"/> 
        <many-to-one name="type" column="type"
         class="team.lingjing.ooad.entity.ProductType" lazy="false"
-        cascade="save-update" insert="true" update="true"></many-to-one>
+        fetch="select">
+       </many-to-one>
+       <set name="salesLineItemses" inverse="true" lazy="false" cascade="delete">
+       <key>
+       <column name="productid"></column>
+       </key>
+       <one-to-many class="team.lingjing.ooad.entity.SalesLineItem"/>
+       </set>
 	</class>
 </hibernate-mapping>

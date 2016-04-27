@@ -1,5 +1,9 @@
 package team.lingjing.ooad.entity;
+
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Products {
 	private int id;//产品编号
 	private String proname;//产品名
@@ -8,7 +12,8 @@ public class Products {
 	private int dayqty;//产品日销量
 	private int monqty;//产品月销量
 	private ProductType type;//产品类别
-	
+	@SuppressWarnings("rawtypes")
+	private Set salesLineItemses = new HashSet();
 	public int getId() {
 		return id;
 	}
@@ -52,5 +57,14 @@ public class Products {
 	public void setType(ProductType type){
 		this.type=type;
 	}
+	@SuppressWarnings("rawtypes")
+	public Set getSalesLineItemses() {
+		return salesLineItemses;
+	}
+	@SuppressWarnings("rawtypes")
+	public void setSalesLineItemses(Set salesLineItemses) {
+		this.salesLineItemses = salesLineItemses;
+	}
+	
 
 }
