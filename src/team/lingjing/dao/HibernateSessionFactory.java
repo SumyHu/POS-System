@@ -1,5 +1,6 @@
 package team.lingjing.dao;
 
+import org.hibernate.FlushMode;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -59,6 +60,7 @@ public class HibernateSessionFactory {
 	public static Session getSession(){
 		//获得ThreadLocal对象管理的Session对象
 		Session session = (Session)sessionThreadLocal.get();
+		//session.setFlushMode(FlushMode.COMMIT);
 		try{
 			//判断Session对象是否已经存在或是否打开
 			if(session == null || !session.isOpen()){
@@ -76,6 +78,23 @@ public class HibernateSessionFactory {
 		}
 		return session;
 	}
+	@SuppressWarnings("rawtypes")
+	public static final ThreadLocal session = new ThreadLocal();
+
+	@SuppressWarnings("unchecked")
+	public static Session getCurrentSession()
+	{
+	Session s = (Session) session.get();
+	// Open a new Session, if this Thread has none yet
+	if (s == null)
+	{
+	s = sessionFactory.openSession();
+	session.set(s);
+	}
+	s.setFlushMode(FlushMode.ALWAYS);
+	return s;
+	}
+
 	//关闭Session对象
 	public static void closeSession(){
 		Session session = (Session)sessionThreadLocal.get();
@@ -86,7 +105,7 @@ public class HibernateSessionFactory {
 			}
 		}catch(HibernateException e){
 			e.printStackTrace();
-		}
+	}
 	}
 	//configFile属性的set方法
 	public static void setConfigFile(String configFile){

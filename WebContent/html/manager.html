@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/comment-css.css">
+	<link rel="stylesheet" type="text/css" href="../css/manager-css.css">
 </head>
 <body>
 	<div class="jumbotron">
@@ -15,25 +16,26 @@
 	</div>
 
 	<div class="row">
-			<select class="form-control col-md-offset-3  col-md-3 order">
+			<select class="form-control col-sm-offset-3 col-sm-2 col-xs-offset-1 col-xs-3 order">
 			    <option>默认排序</option>
 			    <option>时间↑↓</option>
 			    <option>价格↑↓</option>
 			    <option>产品ID↑↓</option>
 			</select>
 
-			<select class="form-control col-md-offset-1  col-md-3 searchType">
+			<select class="form-control col-sm-offset-1 col-sm-2 col-xs-3 searchType">
 				<option>全部</option>
 				<option>产品ID</option>
 				<option>产品</option>
 				<option>产品类型</option>
 			</select>
 			
-			<div class="form-group col-md-3">
+			<div class="form-group col-sm-3 col-xs-3">
 				<input type="text" class="form-control search" placeholder="search">
 			</div>
-
-			<button class="btn btn-primary searchBtn"><span class="glyphicon glyphicon-search"></span></button>
+			
+			<button class="btn btn-primary searchBtn col-sm-1 col-xs-1"><span class="glyphicon glyphicon-search"></span></button>
+			
 		</form>
 	</div>
 
@@ -52,28 +54,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="type" name="milkCap"><td colspan="8" disable><center><strong>奶盖类</strong></center></td></tr>
-				<tr class="content">
-					<td><button class="btn btn-danger btn-xs operation"><span class="glyphicon glyphicon-minus"></span></button></td>
-					<td>1</td>
-					<td>抹茶奶盖</td>
-					<td>11</td>
-					<td>2015/7/7</td>
-					<td>20</td>
-					<td>78</td>
-					<td><button class="btn btn-info btn-xs operation"><span class="glyphicon glyphicon-plus"></span></button></td>
-				</tr>
-
-				<tr class="content">
-					<td><button class="btn btn-danger btn-xs operation"><span class="glyphicon glyphicon-minus"></span></button></td>
-					<td>2</td>
-					<td>巧克力奶盖</td>
-					<td>12</td>
-					<td>2015/8/7</td>
-					<td>27</td>
-					<td>128</td>
-					<td><button class="btn btn-info btn-xs operation"><span class="glyphicon glyphicon-plus"></span></button></td>
-				</tr>
 			</tbody>
 		</table>
 	</center>
@@ -81,8 +61,8 @@
 	<div class="row">
 	
 	
-		<button class="btn btn-default col-md-offset-4 col-md-2 save">save</button>
-		<button class="btn btn-default col-md-2 cancel">cancel</button>
+		<button class="btn btn-default col-xs-offset-4 col-xs-2 save">save</button>
+		<button class="btn btn-default col-xs-2 cancel">cancel</button>
 	</div>
 
 	<!--蒙层-->

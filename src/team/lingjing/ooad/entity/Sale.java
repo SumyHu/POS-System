@@ -8,7 +8,7 @@ public class Sale {
 	private Employee employee;//员工编号,与employee表的id字段关联
 	private double total;//总额
 	private Date date;//订单日期
-	private String saleState;//订单状态，分为"未处理"、"已处理"
+	private int saleState;//订单状态，分为"未处理"、"已处理"
 	@SuppressWarnings("rawtypes")
 	private Set saleLineItem=new HashSet();
 	public int getSaleId() {
@@ -44,11 +44,11 @@ public class Sale {
 	public void setSaleLineItem(Set saleLineItem) {
 		this.saleLineItem = saleLineItem;
 	}
-	public String getSaleState() {
+	public int getSaleState() {
 		return saleState;
 	}
-	public void setSaleState(String saleState) {
-		this.saleState = saleState;
+	public void setSaleState(int i) {
+		this.saleState = i;
 	}
 	
 	

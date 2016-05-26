@@ -1,18 +1,41 @@
-a {cursor: pointer;}
+@charset "utf-8";
 
-div#orderForGoods {display: none;}
+ul li {
+	list-style: none;
+}
 
-div#orderForms {display: none;}
+div#orderForms {
+	display: none;
+}
 
-div.navDiv {background-color: #fff !important; width: 900px;}
+div#orderForGoods {
+	display: none;
+}
 
-div#orderForGoods {background: #fff;}
+div.navDiv {
+	background-color: #fff !important; 
+	width: 900px;
+}
 
-div.menu {float: left; margin: 30px; padding-right: 30px; border-right: 1px solid #d5d0d0;}
-div.menu table {width: 900px;}
+div.menu {
+	float: left; 
+	margin: 30px; 
+	padding-right: 30px; 
+	border-right: 1px solid #d5d0d0;
+}
+div.menu table {
+	width: 900px;
+}
 
-div.saleOrder {float: left; margin: 10px 30px 30px 5px;}
+div.saleOrder {
+	float: left; 
+	margin: 10px 30px 30px 5px;
+}
 
-div#paying {display: none;}
+div#paying {
+	display: none;
+}
 
-div#receipts{display: none;}
+div#receipts{
+	display: none;
+}
